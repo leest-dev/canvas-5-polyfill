@@ -9,11 +9,11 @@
 var browsers;
 var os = require('os').type();
 if (os === 'Darwin') {
-  browsers = ['Chrome', 'ChromeCanaryExperimental', 'Firefox', 'Safari'];
+  browsers = ['Chrome', 'Firefox', 'Safari', 'ChromeHeadless'];
 } else if (os === 'Windows_NT') {
-  browsers = ['Chrome', 'Firefox', 'IE'];
+  browsers = ['Chrome', 'Firefox', 'IE', 'ChromeHeadless'];
 } else {
-  browsers = ['Firefox', 'Chrome'];
+  browsers = ['Chrome', 'Firefox','ChromeHeadless'];
 }
 
 module.exports = function(config) {
@@ -74,7 +74,6 @@ module.exports = function(config) {
     // - PhantomJS
     // - IE (only Windows; has to be installed with `npm install karma-ie-launcher`)
     browsers: browsers,
-
 
     // If browser does not capture in given timeout [ms], kill it
     captureTimeout: 60000,
